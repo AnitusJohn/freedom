@@ -867,3 +867,8 @@
     background: var(--bs-primary) !important;
 }
 /*** copyright end ***/
+
+
+@media (min-width: 360px) and (max-width: 600px) {
+   .bg-primary{background-color:#c2c0be !important}
+}

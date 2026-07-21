@@ -29,6 +29,27 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="./css/count.css"> -->
+    <script src="./js/count.js"></script>
+
+<style>
+    .visitor-counter{
+    background:#ff8c00;
+    color:#fff;
+    padding:6px 14px;
+    border-radius:30px;
+    font-size:14px;
+    font-weight:600;
+    white-space:nowrap;
+    box-shadow:0 2px 8px rgba(0,0,0,.15);
+}
+
+#visitorCount{
+    font-weight:700;
+    margin-left:3px;
+}
+</style>
+
 </head>
 
 <body>
@@ -68,16 +89,31 @@
                     <!-- <img width="100%" src="img/logo.png" alt="Logo"> -->
 
                 </div>
-                <div class="col-md-4 col-lg-3 text-center d-flex align-items-center justify-content-center">
-                    <small class="text-dark">Call Us:</small>
-                    <a href="https://wa.me/9840160229?text=Hi Freedom Technologies i need your service"
-                        class="text-muted">(+91) 98401 60229</a>
-                </div>
+              
+                 <div class="col-md-4 col-lg-3 d-flex align-items-center justify-content-center">
+
+    <!-- Visitor Counter -->
+    <div class="visitor-counter me-3">
+        👁 <span id="visitorCount"> </span>
+    </div>
+
+    <!-- Phone Number -->
+    <div>
+        <small class="text-dark">Call Us:</small>
+        <a href="https://wa.me/9840160229?text=Hi Freedom Technologies i need your service"
+            class="text-muted text-decoration-none">
+            (+91) 98401 60229
+        </a>
+    </div>
+
+</div>
             </div>
         </div>
     </div>
     </div>
     <!-- Topbar End -->
+     
+   
 
     <!-- Navbar & Hero Start -->
     <div class="container-fluid nav-bar p-0">
@@ -154,7 +190,7 @@
                                 </div>
                             </div> -->
                             <!-- <a href="contact.html" class="nav-item nav-link me-2">Contact</a> -->
-                            <div class="nav-item dropdown d-block d-lg-none mb-3">
+                            <!-- <div class="nav-item dropdown d-block d-lg-none mb-3">
                                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">All Category</a>
                                 <div class="dropdown-menu m-0">
                                     <ul class="list-unstyled categories-bars">
@@ -190,7 +226,7 @@
                                         </li>
                                     </ul>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                         <a href="https://wa.me/9840160229?text=Hi Freedom Technologies i need your service"
                             class="btn btn-secondary rounded-pill py-2 px-4 px-lg-3 mb-3 mb-md-3 mb-lg-0"><i
@@ -213,7 +249,7 @@
                         </div>
                         <div class="col-xl-6 carousel-content p-4">
                             <h4 class="text-uppercase fw-bold mb-4 wow fadeInRight" data-wow-delay="0.1s"
-                                style="letter-spacing: 3px;">Save Up To A ₹400</h4>
+                                style="letter-spacing: 3px;">Save Up To A ₹X On </h4>
                             <h1 class="display-3 text-capitalize mb-4 wow fadeInRight" data-wow-delay="0.3s">On Selected
                                 Laptops & Desktop Or Smartphone</h1>
                             <p class="text-dark wow fadeInRight" data-wow-delay="0.5s">Terms and Condition Apply</p>
@@ -227,9 +263,9 @@
                         </div>
                         <div class="col-xl-6 carousel-content p-4">
                             <h4 class="text-uppercase fw-bold mb-4 wow fadeInRight" data-wow-delay="0.1s"
-                                style="letter-spacing: 3px;">Save Up To A ₹200</h4>
+                                style="letter-spacing: 3px;">Save Up To A ₹X On </h4>
                             <h1 class="display-3 text-capitalize mb-4 wow fadeInRight" data-wow-delay="0.3s">On Selected
-                                Laptops & Desktop Or Smartphone</h1>
+                                Laptops & Desktop Or Smartphone </h1>
                             <p class="text-dark wow fadeInRight" data-wow-delay="0.5s">Terms and Condition Apply</p>
                             <a class="btn btn-primary rounded-pill py-3 px-5 wow fadeInRight" data-wow-delay="0.7s"
                                 href="#">Shop Now</a>
@@ -241,7 +277,7 @@
                 <div class="carousel-header-banner h-100">
                     <img src="img/header-img.jpg" class="img-fluid w-100 h-100" style="object-fit: cover;" alt="Image">
                     <div class="carousel-banner-offer">
-                        <p class="bg-primary text-white rounded fs-5 py-2 px-4 mb-0 me-3">Save ₹48.00</p>
+                        <p class="bg-primary text-white rounded fs-5 py-2 px-4 mb-0 me-3">Save ₹50%</p>
                         <p class="text-primary fs-5 fw-bold mb-0">Special Offer</p>
                     </div>
                     <div class="carousel-banner">
@@ -383,17 +419,17 @@
                             </li>
                             <li class="nav-item mb-4">
                                 <a class="d-flex py-2 mx-2 bg-light rounded-pill" data-bs-toggle="pill" href="#tab-2">
-                                    <span class="text-dark" style="width: 130px;">New Arrivals</span>
+                                    <span class="text-dark" style="width: 130px;">Laptops</span>
                                 </a>
                             </li>
                             <li class="nav-item mb-4">
                                 <a class="d-flex mx-2 py-2 bg-light rounded-pill" data-bs-toggle="pill" href="#tab-3">
-                                    <span class="text-dark" style="width: 130px;">Featured</span>
+                                    <span class="text-dark" style="width: 130px;">CCTV</span>
                                 </a>
                             </li>
                             <li class="nav-item mb-4">
                                 <a class="d-flex mx-2 py-2 bg-light rounded-pill" data-bs-toggle="pill" href="#tab-4">
-                                    <span class="text-dark" style="width: 130px;">Top Selling</span>
+                                    <span class="text-dark" style="width: 130px;">Networking</span>
                                 </a>
                             </li>
                         </ul>
@@ -2108,9 +2144,10 @@
                             style="width: 70px; height: 70px;">
                             <i class="fas fa-envelope fa-2x text-primary"></i>
                         </div>
+
                         <div>
                             <h4 class="text-black">Mail Us</h4>
-                            <p class="mb-2">info@freedomtechnologies.com</p>
+                            <p class="mb-2"> info@freedomtechnologies.com</p>
                         </div>
                     </div>
                 </div>
@@ -2243,6 +2280,44 @@
     <script src="lib/wow/wow.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
+
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-app.js";
+import {
+    getDatabase,
+    ref,
+    runTransaction,
+    onValue
+} from "https://www.gstatic.com/firebasejs/12.16.0/firebase-database.js";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyAlPkoJuaS49jg3fttbYD3xIBBbiY5FH_o",
+    authDomain: "ft-visitor-counter.firebaseapp.com",
+    databaseURL: "https://ft-visitor-counter-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "ft-visitor-counter",
+    storageBucket: "ft-visitor-counter.firebasestorage.app",
+    messagingSenderId: "872290284978",
+    appId: "1:872290284978:web:ba48784f2be91425cde0ab"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+
+const counterRef = ref(db, "visitors");
+
+// Count once per browser
+if (!localStorage.getItem("ftvisitor")) {
+    runTransaction(counterRef, (current) => (current || 0) + 1);
+    localStorage.setItem("ftvisitor", "true");
+}
+
+// Display count
+onValue(counterRef, (snapshot) => {
+    document.getElementById("visitorCount").textContent =
+        snapshot.val() || 0;
+});
+</script>
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>

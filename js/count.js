@@ -17,7 +17,9 @@ const firebaseConfig = {
   appId: "XXXXXXXXXXXX"
 };
 
+
 const app = initializeApp(firebaseConfig);
+
 const db = getDatabase(app);
 
 const counterRef = ref(db, "visitorCount");
@@ -36,3 +38,5 @@ if(!localStorage.getItem("visited")){
 onValue(counterRef,(snapshot)=>{
     document.getElementById("count").innerHTML = snapshot.val() || 0;
 });
+
+

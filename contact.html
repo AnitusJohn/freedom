@@ -2,567 +2,2578 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title>Freedom Technologies</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Google Web Fonts -->
+    <title>Contact Us | Freedom Technologies</title>
+
+    <meta name="description"
+        content="Contact Freedom Technologies for computing, networking, CCTV, security, displays, cloud, infrastructure and complete IT solutions.">
+
+    <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link
-        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
 
-    <!-- Icon Font Stylesheet -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="./css/count.css"> -->
-    <script src="./js/count.js"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <style>
+
+        /* =====================================================
+           GLOBAL
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Barlow", sans-serif;
+            background: #f7f9f8;
+            color: #172033;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: min(1200px, 92%);
+            margin: auto;
+        }
+
+
+        /* =====================================================
+           COLORS
+        ===================================================== */
+
+        :root {
+            --navy: #071b3a;
+            --dark-blue: #0a2854;
+            --blue: #0d3972;
+            --orange: #f47b20;
+            --green: #08783d;
+            --light-green: #eaf7ef;
+            --light-orange: #fff3e8;
+            --white: #ffffff;
+            --text: #263238;
+            --muted: #6d7783;
+            --border: #e4e9ed;
+        }
+
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        .header {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.97);
+            border-bottom: 1px solid #e5e8ec;
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-container {
+            min-height: 82px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .logo img {
+            width: 165px;
+            height: auto;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            gap: 35px;
+        }
+
+        .navbar a {
+            color: #182335;
+            font-size: 16px;
+            font-weight: 600;
+            position: relative;
+            transition: 0.3s;
+            padding: 30px 0;
+        }
+
+        .navbar a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 20px;
+            width: 0;
+            height: 3px;
+            background: var(--orange);
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        .navbar a:hover,
+        .navbar a.active {
+            color: var(--green);
+        }
+
+        .navbar a:hover::after,
+        .navbar a.active::after {
+            width: 100%;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
         .visitor-counter {
-            background: #ff8c00;
-            color: #fff;
-            padding: 6px 14px;
+            background: var(--navy);
+            color: white;
+            padding: 8px 14px;
             border-radius: 30px;
             font-size: 14px;
             font-weight: 600;
             white-space: nowrap;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, .15);
         }
 
-        #visitorCount {
+        .phone {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--green);
+            color: white;
+            padding: 10px 17px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .phone:hover {
+            background: var(--orange);
+            transform: translateY(-2px);
+        }
+
+        .menu-btn {
+            display: none;
+            border: 0;
+            background: var(--navy);
+            color: white;
+            width: 42px;
+            height: 42px;
+            border-radius: 8px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+
+        /* =====================================================
+           CONTACT HERO
+        ===================================================== */
+
+        .contact-hero {
+            position: relative;
+            min-height: 470px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at 80% 30%, rgba(244,123,32,.35), transparent 30%),
+                radial-gradient(circle at 10% 80%, rgba(8,120,61,.30), transparent 30%),
+                linear-gradient(120deg, #061a37, #0a2e5b 55%, #073d35);
+        }
+
+        .contact-hero::before {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border: 1px solid rgba(255,255,255,.12);
+            border-radius: 50%;
+            right: -100px;
+            top: -160px;
+            animation: rotateCircle 18s linear infinite;
+        }
+
+        .contact-hero::after {
+            content: "";
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            border: 1px solid rgba(255,255,255,.08);
+            border-radius: 50%;
+            left: -160px;
+            bottom: -180px;
+        }
+
+        @keyframes rotateCircle {
+            from {
+                transform: rotate(0);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .hero-grid {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-content {
+            color: white;
+        }
+
+        .hero-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 17px;
+            border-radius: 30px;
+            background: rgba(255,255,255,.1);
+            border: 1px solid rgba(255,255,255,.2);
+            color: #fff;
+            font-size: 14px;
             font-weight: 700;
-            margin-left: 3px;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
         }
 
-        .container{
-    /* width:420px; */
-    background:#fff;
-    padding:30px;
-    border-radius:10px;
-    box-shadow:0 10px 30px rgba(0,0,0,.1);
-}
+        .hero-label span {
+            width: 9px;
+            height: 9px;
+            background: var(--orange);
+            border-radius: 50%;
+            box-shadow: 0 0 15px var(--orange);
+        }
 
-.container h2{
-    text-align:center;
-    margin-bottom:20px;
-    color:#333;
-}
+        .hero-content h1 {
+            font-size: clamp(42px, 6vw, 72px);
+            line-height: 1;
+            font-weight: 900;
+            margin-bottom: 22px;
+        }
 
-.input-group{
-    margin-bottom:15px;
-}
+        .hero-content h1 .orange {
+            color: var(--orange);
+        }
 
-.input-group label{
-    display:block;
-    margin-bottom:6px;
-    font-weight:bold;
-}
+        .hero-content h1 .green {
+            color: #50c878;
+        }
 
-.input-group input,
-.input-group textarea{
-    width:100%;
-    padding:12px;
-    border:1px solid #ccc;
-    border-radius:6px;
-    font-size:15px;
-}
+        .hero-content p {
+            max-width: 650px;
+            font-size: 18px;
+            line-height: 1.7;
+            color: #d9e3ef;
+            margin-bottom: 30px;
+        }
 
-.input-group input:focus,
-.input-group textarea:focus{
-    outline:none;
-    border-color:#25D366;
-}
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
 
-button{
-    width:100%;
-    padding:14px;
-    border:none;
-    background:#25D366;
-    color:#fff;
-    font-size:17px;
-    border-radius:6px;
-    cursor:pointer;
-}
+        .hero-btn {
+            padding: 13px 23px;
+            border-radius: 8px;
+            font-weight: 700;
+            transition: .3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-button:hover{
-    background:#128C7E;
-}
+        .hero-btn.primary {
+            background: var(--orange);
+            color: white;
+        }
+
+        .hero-btn.primary:hover {
+            background: white;
+            color: var(--orange);
+            transform: translateY(-3px);
+        }
+
+        .hero-btn.outline {
+            color: white;
+            border: 1px solid rgba(255,255,255,.4);
+        }
+
+        .hero-btn.outline:hover {
+            background: white;
+            color: var(--navy);
+        }
+
+
+        /* =====================================================
+           HERO CONTACT CARD
+        ===================================================== */
+
+        .hero-contact-card {
+            background: rgba(255,255,255,.10);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255,255,255,.18);
+            border-radius: 22px;
+            padding: 30px;
+            color: white;
+            box-shadow: 0 25px 70px rgba(0,0,0,.2);
+        }
+
+        .hero-contact-card h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .hero-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(255,255,255,.12);
+        }
+
+        .hero-contact-item:last-child {
+            border-bottom: none;
+        }
+
+        .hero-contact-icon {
+            min-width: 45px;
+            width: 45px;
+            height: 45px;
+            border-radius: 12px;
+            background: white;
+            color: var(--green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .hero-contact-item strong {
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .hero-contact-item p,
+        .hero-contact-item a {
+            color: #dbe5ef;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+
+        /* =====================================================
+           BREADCRUMB
+        ===================================================== */
+
+        .breadcrumb {
+            background: white;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .breadcrumb-inner {
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+        }
+
+        .breadcrumb a {
+            color: var(--green);
+            font-weight: 600;
+        }
+
+        .breadcrumb span {
+            color: #89939f;
+        }
+
+
+        /* =====================================================
+           CONTACT INFO CARDS
+        ===================================================== */
+
+        .info-section {
+            padding: 80px 0 30px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title .label {
+            color: var(--orange);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 14px;
+        }
+
+        .section-title h2 {
+            font-size: 42px;
+            color: var(--navy);
+            margin: 8px 0 12px;
+            font-weight: 800;
+        }
+
+        .section-title h2 span {
+            color: var(--green);
+        }
+
+        .section-title p {
+            max-width: 650px;
+            margin: auto;
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .info-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 30px 22px;
+            text-align: center;
+            transition: .4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .info-card::before {
+            content: "";
+            position: absolute;
+            height: 4px;
+            width: 0;
+            left: 0;
+            top: 0;
+            background: linear-gradient(90deg, var(--orange), var(--green));
+            transition: .4s;
+        }
+
+        .info-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,.09);
+        }
+
+        .info-card:hover::before {
+            width: 100%;
+        }
+
+        .info-icon {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 18px;
+            font-size: 25px;
+            color: var(--green);
+            background: var(--light-green);
+        }
+
+        .info-card:nth-child(even) .info-icon {
+            color: var(--orange);
+            background: var(--light-orange);
+        }
+
+        .info-card h3 {
+            color: var(--navy);
+            font-size: 20px;
+            margin-bottom: 9px;
+        }
+
+        .info-card p,
+        .info-card a {
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .info-card a:hover {
+            color: var(--orange);
+        }
+
+
+        /* =====================================================
+           CONTACT MAIN
+        ===================================================== */
+
+        .contact-section {
+            padding: 55px 0 90px;
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: .85fr 1.15fr;
+            gap: 30px;
+            align-items: stretch;
+        }
+
+        /* LEFT */
+
+        .contact-sidebar {
+            background:
+                linear-gradient(145deg, #071c3b, #0b315e);
+            border-radius: 25px;
+            padding: 42px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-sidebar::before {
+            content: "";
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            border: 1px solid rgba(255,255,255,.1);
+            right: -100px;
+            top: -90px;
+        }
+
+        .contact-sidebar::after {
+            content: "";
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: rgba(244,123,32,.12);
+            right: -70px;
+            bottom: -80px;
+        }
+
+        .contact-sidebar-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-sidebar h2 {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .contact-sidebar > p {
+            color: #c8d5e4;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .side-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 24px;
+        }
+
+        .side-icon {
+            width: 45px;
+            height: 45px;
+            min-width: 45px;
+            background: rgba(255,255,255,.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--orange);
+        }
+
+        .side-item h4 {
+            margin-bottom: 4px;
+            font-size: 16px;
+        }
+
+        .side-item p,
+        .side-item a {
+            color: #cbd7e4;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .side-item a:hover {
+            color: white;
+        }
+
+        .social-title {
+            margin-top: 30px;
+            margin-bottom: 12px;
+            font-size: 15px;
+        }
+
+        .socials {
+            display: flex;
+            gap: 10px;
+        }
+
+        .socials a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,.1);
+            color: white;
+            transition: .3s;
+        }
+
+        .socials a:hover {
+            background: var(--orange);
+            transform: translateY(-3px);
+        }
+
+
+        /* FORM */
+
+        .contact-form-box {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 25px;
+            padding: 42px;
+            box-shadow: 0 20px 60px rgba(0,0,0,.07);
+        }
+
+        .form-header {
+            margin-bottom: 25px;
+        }
+
+        .form-header h2 {
+            font-size: 32px;
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+
+        .form-header p {
+            color: var(--muted);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        .input-group.full {
+            grid-column: 1 / -1;
+        }
+
+        .input-group label {
+            color: var(--navy);
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .input-group input,
+        .input-group textarea,
+        .input-group select {
+            width: 100%;
+            border: 1px solid #dce2e8;
+            background: #fafcfd;
+            border-radius: 10px;
+            padding: 14px 15px;
+            font-family: inherit;
+            font-size: 15px;
+            outline: none;
+            transition: .3s;
+        }
+
+        .input-group textarea {
+            resize: vertical;
+            min-height: 130px;
+        }
+
+        .input-group input:focus,
+        .input-group textarea:focus,
+        .input-group select:focus {
+            border-color: var(--green);
+            background: white;
+            box-shadow: 0 0 0 4px rgba(8,120,61,.08);
+        }
+
+        .submit-btn {
+            margin-top: 22px;
+            width: 100%;
+            border: none;
+            background: linear-gradient(90deg, var(--orange), #ff963f);
+            color: white;
+            padding: 16px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: .3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .submit-btn:hover {
+            background: var(--green);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(8,120,61,.2);
+        }
+
+
+        /* =====================================================
+           WHY CONTACT US
+        ===================================================== */
+
+        .why-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f1f8f4, #fff7ef);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .why-card {
+            background: white;
+            padding: 30px;
+            border-radius: 18px;
+            border: 1px solid var(--border);
+            transition: .3s;
+        }
+
+        .why-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(0,0,0,.07);
+        }
+
+        .why-number {
+            font-size: 42px;
+            font-weight: 900;
+            color: var(--orange);
+            line-height: 1;
+            margin-bottom: 14px;
+        }
+
+        .why-card h3 {
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+
+        .why-card p {
+            color: var(--muted);
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+
+        /* =====================================================
+           MAP
+        ===================================================== */
+
+        .map-section {
+            padding: 80px 0;
+        }
+
+        .map-wrapper {
+            border-radius: 22px;
+            overflow: hidden;
+            height: 430px;
+            border: 6px solid white;
+            box-shadow: 0 15px 50px rgba(0,0,0,.1);
+        }
+
+        .map-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+
+        /* =====================================================
+           CTA
+        ===================================================== */
+
+        .cta {
+            padding: 70px 0;
+        }
+
+        .cta-box {
+            background:
+                linear-gradient(120deg, #071c3b, #0a3861);
+            border-radius: 25px;
+            padding: 55px;
+            position: relative;
+            overflow: hidden;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .cta-box::after {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            border: 1px solid rgba(255,255,255,.1);
+            right: -100px;
+            top: -120px;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-content small {
+            color: var(--orange);
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .cta-content h2 {
+            font-size: 38px;
+            margin: 10px 0;
+        }
+
+        .cta-content p {
+            color: #c8d5e4;
+        }
+
+        .cta-btn {
+            position: relative;
+            z-index: 2;
+            white-space: nowrap;
+            background: var(--orange);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 9px;
+            font-weight: 800;
+            transition: .3s;
+        }
+
+        .cta-btn:hover {
+            background: white;
+            color: var(--green);
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        .footer {
+            background: #06172f;
+            color: #b8c6d7;
+            padding-top: 70px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr 1.3fr;
+            gap: 40px;
+            padding-bottom: 50px;
+        }
+
+        .footer-logo img {
+            width: 170px;
+            background: white;
+            border-radius: 10px;
+            padding: 5px;
+            margin-bottom: 20px;
+        }
+
+        .footer-about p {
+            line-height: 1.7;
+            font-size: 14px;
+            max-width: 330px;
+        }
+
+        .footer-column h3 {
+            color: white;
+            font-size: 19px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: "";
+            position: absolute;
+            width: 35px;
+            height: 3px;
+            background: var(--orange);
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer-column a {
+            display: block;
+            color: #aebdce;
+            margin-bottom: 12px;
+            font-size: 14px;
+            transition: .3s;
+        }
+
+        .footer-column a:hover {
+            color: var(--orange);
+            padding-left: 5px;
+        }
+
+        .footer-contact p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        .footer-contact a {
+            display: inline;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 9px;
+            margin-top: 20px;
+        }
+
+        .footer-social a {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(255,255,255,.08);
+            color: white;
+        }
+
+        .footer-social a:hover {
+            background: var(--orange);
+            padding-left: 0;
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255,255,255,.1);
+            padding: 20px 0;
+            text-align: center;
+            font-size: 13px;
+            color: #8292a5;
+        }
+
+        .copyright span {
+            color: var(--orange);
+        }
+
+
+        /* =====================================================
+           BACK TOP
+        ===================================================== */
+
+        .back-top {
+            position: fixed;
+            right: 25px;
+            bottom: 25px;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: none;
+            background: var(--orange);
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: .3s;
+            z-index: 999;
+            box-shadow: 0 8px 25px rgba(0,0,0,.2);
+        }
+
+        .back-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-top:hover {
+            background: var(--green);
+            transform: translateY(-4px);
+        }
+
+
+        /* =====================================================
+           SUCCESS MESSAGE
+        ===================================================== */
+
+        .success-message {
+            display: none;
+            background: #e8f8ef;
+            color: #08783d;
+            border: 1px solid #b8e7cb;
+            padding: 13px 15px;
+            border-radius: 9px;
+            margin-top: 15px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 1100px) {
+
+            .navbar {
+                gap: 20px;
+            }
+
+            .header-right .visitor-counter {
+                display: none;
+            }
+
+            .info-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+
+        @media (max-width: 850px) {
+
+            .nav-container {
+                min-height: 72px;
+            }
+
+            .navbar {
+                position: absolute;
+                top: 72px;
+                left: 0;
+                width: 100%;
+                background: white;
+                display: none;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                box-shadow: 0 15px 30px rgba(0,0,0,.08);
+            }
+
+            .navbar.active {
+                display: flex;
+            }
+
+            .navbar a {
+                padding: 16px 5%;
+                border-bottom: 1px solid #edf0f2;
+            }
+
+            .navbar a::after {
+                display: none;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .phone {
+                display: none;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+                padding: 80px 0;
+            }
+
+            .hero-contact-card {
+                max-width: 600px;
+            }
+
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .cta-box {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            .container {
+                width: 92%;
+            }
+
+            .logo img {
+                width: 135px;
+            }
+
+            .contact-hero {
+                min-height: auto;
+            }
+
+            .hero-content h1 {
+                font-size: 43px;
+            }
+
+            .hero-content p {
+                font-size: 15px;
+            }
+
+            .section-title h2 {
+                font-size: 32px;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .input-group.full {
+                grid-column: auto;
+            }
+
+            .contact-sidebar,
+            .contact-form-box {
+                padding: 28px 22px;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-box {
+                padding: 35px 25px;
+            }
+
+            .cta-content h2 {
+                font-size: 30px;
+            }
+
+            .map-wrapper {
+                height: 330px;
+            }
+        }
+
     </style>
-
 </head>
+
 
 <body>
 
-    <!-- Spinner Start -->
-    <div id="spinner"
-        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="header">
+
+    <div class="container nav-container">
+
+        <a href="./index.html" class="logo">
+            <img src="img/logo.png" alt="Freedom Technologies">
+        </a>
+
+
+        <nav class="navbar" id="navbar">
+
+            <a href="./index.html">
+                Home
+            </a>
+
+            <a href="./product.html">
+                Products & Solution
+            </a>
+
+            <a href="./contact.html" class="active">
+                Contact
+            </a>
+
+        </nav>
+
+
+        <div class="header-right">
+
+            <!-- Visitor Counter -->
+            <span class="visitor-counter">
+                <i class="fa-solid fa-eye"></i>
+                <span id="visitorCount">0</span>
+            </span>
+
+
+            <a href="tel:+919840160229" class="phone">
+                <i class="fa-solid fa-phone"></i>
+                +91 98401 60229
+            </a>
+
+
+            <button class="menu-btn" id="menuBtn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
         </div>
+
     </div>
-    <!-- Spinner End -->
+
+</header>
 
 
-    <!-- Topbar Start -->
-    <div class="container-fluid px-5 d-none border-bottom d-lg-block">
-        <div class="row gx-0 align-items-center">
 
-        </div>
-    </div>
-    <div class="container-fluid px-5 py-4 d-none d-lg-block">
-        <div class="row gx-0 align-items-center text-center">
-            <div class="row">
+<!-- =====================================================
+     HERO
+===================================================== -->
 
-                <div class="col-md-4 col-lg-3 text-center text-lg-start">
-                    <div class="d-inline-flex align-items-center">
-                        <a href="" class="navbar-brand p-0">
+<section class="contact-hero">
 
-                            <img width="100%" src="img/logo.png" alt="Logo">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-4 col-lg-6 text-center">
-                    <!-- <img width="100%" src="img/logo.png" alt="Logo"> -->
+    <div class="container hero-grid">
 
-                </div>
+        <div class="hero-content">
 
-                <div class="col-md-4 col-lg-3 d-flex align-items-center justify-content-center">
-
-                    <!-- Visitor Counter -->
-                    <div class="visitor-counter me-3">
-                        👁 <span id="visitorCount"> </span>
-                    </div>
-
-                    <!-- Phone Number -->
-                    <div>
-                        <small class="text-dark">Call Us:</small>
-                        <a href="https://wa.me/9840160229?text=Hi Freedom Technologies i need your service"
-                            class="text-muted text-decoration-none">
-                            (+91) 98401 60229
-                        </a>
-                    </div>
-
-                </div>
+            <div class="hero-label">
+                <span></span>
+                CONTACT FREEDOM TECHNOLOGIES
             </div>
+
+            <h1>
+                Let's Build Your
+                <span class="orange">Right</span>
+                <span class="green">Technology.</span>
+            </h1>
+
+            <p>
+                Have a technology requirement, project or business challenge?
+                Our experts are ready to understand your needs and recommend
+                the right products and solutions for your business.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#contact-form" class="hero-btn primary">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    Send Enquiry
+                </a>
+
+                <a href="https://wa.me/919840160229"
+                   target="_blank"
+                   class="hero-btn outline">
+
+                    <i class="fa-brands fa-whatsapp"></i>
+                    WhatsApp Us
+
+                </a>
+
+            </div>
+
         </div>
-    </div>
-    </div>
-    <!-- Topbar End -->
 
 
 
-    <!-- Navbar & Hero Start -->
-    <div class="container-fluid nav-bar p-0">
-        <div class="row gx-0 bg-primary px-5 align-items-center">
-            <!-- <div class="col-lg-3 d-none d-lg-block">
-<nav class="navbar navbar-light position-relative" style="width: 250px;">
-<button class="navbar-toggler border-0 fs-4 w-100 px-0 text-start" type="button"
-data-bs-toggle="collapse" data-bs-target="#allCat">
-<h4 class="m-0"><i class="fa fa-bars me-2"></i>All Categories</h4>
-</button>
-<div class="collapse navbar-collapse rounded-bottom" id="allCat">
-<div class="navbar-nav ms-auto py-0">
-<ul class="list-unstyled categories-bars">
-<li>
-<div class="categories-bars-item">
-<a href="#">Accessories</a>
-<span>(3)</span>
-</div>
-</li>
-<li>
-<div class="categories-bars-item">
-<a href="#">Electronics & Computer</a>
-<span>(5)</span>
-</div>
-</li>
-<li>
-<div class="categories-bars-item">
-<a href="#">Laptops & Desktops</a>
-<span>(2)</span>
-</div>
-</li>
-<li>
-<div class="categories-bars-item">
-<a href="#">Mobiles & Tablets</a>
-<span>(8)</span>
-</div>
-</li>
-<li>
-<div class="categories-bars-item">
-<a href="#">SmartPhone & Smart TV</a>
-<span>(5)</span>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</nav>
-</div> -->
+        <!-- Hero Contact Card -->
 
-            <div class="col-12 col-lg-9">
-                <nav class="navbar navbar-expand-lg navbar-light bg-primary ">
-                    <a href="" class="navbar-brand d-block d-lg-none">
+        <div class="hero-contact-card">
 
-                        <img width="100%" src="img/logo.png" alt="Logo">
+            <h3>
+                Get In Touch
+            </h3>
+
+
+            <div class="hero-contact-item">
+
+                <div class="hero-contact-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+
+                <div>
+                    <strong>Our Office</strong>
+
+                    <p>
+                        NO 1, Maharaja Nagar,
+                        Rathinamangalam,
+                        Chennai - 600127
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="hero-contact-item">
+
+                <div class="hero-contact-icon">
+                    <i class="fa-solid fa-phone"></i>
+                </div>
+
+                <div>
+                    <strong>Call Us</strong>
+
+                    <a href="tel:+919840160229">
+                        +91 98401 60229
                     </a>
-                    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarCollapse">
-                        <span class="fa fa-bars fa-1x"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarCollapse">
-                        <div class="navbar-nav ms-auto py-0">
-                            <a href="index.html" class="nav-item nav-link active">Home</a>
-                            <a href="about.html" class="nav-item nav-link">About</a>
-                            <a href="product.html" class="nav-item nav-link">Product</a>
+                </div>
 
-                            <a href="contact.html" class="nav-item nav-link">Contact</a>
-                            <!-- <div class="nav-item dropdown">
-<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-<div class="dropdown-menu m-0">
-<a href="bestseller.html" class="dropdown-item">Bestseller</a>
-<a href="cart.html" class="dropdown-item">Cart Page</a>
-<a href="cheackout.html" class="dropdown-item">Cheackout</a>
-<a href="404.html" class="dropdown-item">404 Page</a>
-</div>
-</div> -->
-                            <!-- <a href="contact.html" class="nav-item nav-link me-2">Contact</a> -->
-                            <!-- <div class="nav-item dropdown d-block d-lg-none mb-3">
-<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">All Category</a>
-<div class="dropdown-menu m-0">
-<ul class="list-unstyled categories-bars">
-<li>
-<div class="categories-bars-item">
-<a href="#">Accessories</a>
-<span>(3)</span>
-</div>
-</li>
-<li>
-<div class="categories-bars-item">
-<a href="#">Electronics & Computer</a>
-<span>(5)</span>
-</div>
-</li>
-<li>
-<div class="categories-bars-item">
-<a href="#">Laptops & Desktops</a>
-<span>(2)</span>
-</div>
-</li>
-<li>
-<div class="categories-bars-item">
-<a href="#">Mobiles & Tablets</a>
-<span>(8)</span>
-</div>
-</li>
-<li>
-<div class="categories-bars-item">
-<a href="#">SmartPhone & Smart TV</a>
-<span>(5)</span>
-</div>
-</li>
-</ul>
-</div>
-</div> -->
-                        </div>
-                        <a href="https://wa.me/9840160229?text=Hi Freedom Technologies i need your service"
-                            class="btn btn-secondary rounded-pill py-2 px-4 px-lg-3 mb-3 mb-md-3 mb-lg-0"><i
-                                class="fa fa-mobile-alt me-2"></i> (+91) 98401 60229</a>
-
-                    </div>
-                </nav>
             </div>
+
+
+            <div class="hero-contact-item">
+
+                <div class="hero-contact-icon">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+
+                <div>
+                    <strong>Email Us</strong>
+
+                    <a href="mailto:welcome@freedomtechnologies.in">
+                        welcome@freedomtechnologies.in
+                    </a>
+                </div>
+
+            </div>
+
         </div>
+
     </div>
-    <!-- Navbar & Hero End -->
 
-   
-   <div class="container">
-    <h2>Contact Us</h2>
+</section>
 
-    <form id="contactForm">
-        <div class="input-group">
-            <label>Full Name</label>
-            <input type="text" id="name" placeholder="Enter your name" required>
-        </div>
 
-        <div class="input-group">
-            <label>Email</label>
-            <input type="email" id="email" placeholder="Enter your email" required>
-        </div>
 
-        <div class="input-group">
-            <label>Phone Number</label>
-            <input type="tel" id="phone" placeholder="Enter your phone number" required>
-        </div>
+<!-- =====================================================
+     BREADCRUMB
+===================================================== -->
 
-        <div class="input-group">
-            <label>Subject</label>
-            <input type="text" id="subject" placeholder="Enter subject">
-        </div>
+<div class="breadcrumb">
 
-        <div class="input-group">
-            <label>Message</label>
-            <textarea id="message" rows="5" placeholder="Write your message" required></textarea>
-        </div>
+    <div class="container breadcrumb-inner">
 
-        <button type="submit">Send to WhatsApp</button>
-    </form>
+        <a href="./index.html">
+            Home
+        </a>
+
+        <span>/</span>
+
+        <strong>Contact Us</strong>
+
+    </div>
+
 </div>
 
-<script src="script.js"></script>
-  
 
 
+<!-- =====================================================
+     CONTACT INFORMATION
+===================================================== -->
 
-    <!-- Footer Start -->
-    <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
-        <div class="container py-5">
-            <div class="row g-4 rounded mb-5" style="background: #ffffff;">
-                <div class="col-md-6 col-lg-6 col-xl-4">
-                    <div class="rounded p-4">
-                        <div class="rounded-circle bg-secondary d-flex align-items-center justify-content-center mb-4"
-                            style="width: 70px; height: 70px;">
-                            <i class="fas fa-map-marker-alt fa-2x text-primary"></i>
-                        </div>
-                        <div>
-                            <h4 class="text-black">Address</h4>
-                            <p class="mb-2">NO 1, Maharaja Nagar, Rathinamangalam, Chennai-600127</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-6 col-xl-4">
-                    <div class="rounded p-4">
-                        <div class="rounded-circle bg-secondary d-flex align-items-center justify-content-center mb-4"
-                            style="width: 70px; height: 70px;">
-                            <i class="fas fa-envelope fa-2x text-primary"></i>
-                        </div>
+<section class="info-section">
 
-                        <div>
-                            <h4 class="text-black">Mail Us</h4>
-                            <p class="mb-2"> welcome@freedomtechnologies.com</p>
-                        </div>
-                    </div>
-                </div>
+    <div class="container">
 
-                <div class="col-md-6 col-lg-6 col-xl-4">
-                    <div class="rounded p-4">
-                        <div class="rounded-circle bg-secondary d-flex align-items-center justify-content-center mb-4"
-                            style="width: 70px; height: 70px;">
-                            <i class="fab fa-firefox-browser fa-2x text-primary"></i>
-                        </div>
-                        <div>
-                            <h4 class="text-black">Phone Number</h4>
-                            <p class="mb-2">+91 98401 60229</p>
-                        </div>
-                    </div>
-                </div>
+        <div class="section-title">
+
+            <div class="label">
+                CONTACT INFORMATION
             </div>
-            <div class="row g-5">
-                <div class="col-md-6 col-lg-6 col-xl-4">
-                    <div class="footer-item d-flex flex-column">
-                        <div class="footer-item">
-                            <h4 class="text-primary mb-4">
-                                <img style="background-color: #fff;border-radius: 15px;" width="100%" src="img/logo.png"
-                                    alt="Logo">
 
+            <h2>
+                We're Here To <span>Help</span>
+            </h2>
+
+            <p>
+                Whether you need a single product, complete IT infrastructure,
+                security solutions or ongoing support, connect with our team.
+            </p>
+
+        </div>
+
+
+        <div class="info-grid">
+
+
+            <div class="info-card">
+
+                <div class="info-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+
+                <h3>Visit Us</h3>
+
+                <p>
+                    NO 1, Maharaja Nagar,
+                    Rathinamangalam,
+                    Chennai - 600127
+                </p>
+
+            </div>
+
+
+
+            <div class="info-card">
+
+                <div class="info-icon">
+                    <i class="fa-solid fa-phone"></i>
+                </div>
+
+                <h3>Call Us</h3>
+
+                <a href="tel:+919840160229">
+                    +91 98401 60229
+                </a>
+
+                <p>
+                    Talk to our technology experts
+                </p>
+
+            </div>
+
+
+
+            <div class="info-card">
+
+                <div class="info-icon">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+
+                <h3>Email Us</h3>
+
+                <a href="mailto:welcome@freedomtechnologies.in">
+                    welcome@freedomtechnologies.in
+                </a>
+
+                <p>
+                    Send us your requirements
+                </p>
+
+            </div>
+
+
+
+            <div class="info-card">
+
+                <div class="info-icon">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </div>
+
+                <h3>WhatsApp</h3>
+
+                <a href="https://wa.me/919840160229"
+                   target="_blank">
+
+                    Chat With Us
+
+                </a>
+
+                <p>
+                    Quick response from our team
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTACT FORM
+===================================================== -->
+
+<section class="contact-section" id="contact-form">
+
+    <div class="container">
+
+        <div class="contact-wrapper">
+
+
+            <!-- LEFT SIDE -->
+
+            <div class="contact-sidebar">
+
+                <div class="contact-sidebar-content">
+
+                    <h2>
+                        Tell Us What
+                        You Need.
+                    </h2>
+
+                    <p>
+                        Share your requirements with us.
+                        Our team will understand your needs
+                        and help you find the right technology solution.
+                    </p>
+
+
+                    <div class="side-item">
+
+                        <div class="side-icon">
+                            <i class="fa-solid fa-headset"></i>
+                        </div>
+
+                        <div>
+
+                            <h4>
+                                Expert Support
                             </h4>
-                            <p class="mb-3">Freedom Technologies is committed to empowering individuals and businesses
-                                through the power of networking. By connecting the right people at the right time, we
-                                help unlock new opportunities, foster collaboration, and drive success.</p>
 
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-6 col-xl-4">
-                    <div class="footer-item d-flex flex-column">
-                        <h4 class="text-primary mb-4">Useful Links</h4>
-                        <a href="./index.html" class=""><i class="fas fa-angle-right me-2"></i> Home </a>
-                        <a href="./about.html" class=""><i class="fas fa-angle-right me-2"></i> About Us</a>
-                        <a href="./contact.html" class=""><i class="fas fa-angle-right me-2"></i> Contact Us</a>
-                        <a href="./product.html" class=""><i class="fas fa-angle-right me-2"></i> Product</a>
-                        <!-- <a href="./s" class=""><i class="fas fa-angle-right me-2"></i> Service</a> -->
-
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-6 col-xl-4">
-                    <div style="background-color: #fff; padding: 20px; border-radius: 15px;"
-                        class="footer-item d-flex flex-column">
-                        <h4 class="text-primary mb-4">Subscribe</h4>
-                        <div class="row">
-                            <div class="col-md-2 col-sm-4">
-                                <a href="/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                                        <path fill="#0000ff"
-                                            d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z">
-                                        </path>
-                                    </svg></a>
-                            </div>
-                            <div class="col-md-2 col-sm-4">
-                                <a href="https://www.youtube.com/"><svg xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 576 512">
-                                        <path fill="#ff0000"
-                                            d="M549.7 124.1c-6.3-23.7-24.8-42.3-48.3-48.6C458.8 64 288 64 288 64S117.2 64 74.6 75.5c-23.5 6.3-42 24.9-48.3 48.6-11.4 42.9-11.4 132.3-11.4 132.3s0 89.4 11.4 132.3c6.3 23.7 24.8 41.5 48.3 47.8C117.2 448 288 448 288 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zm-317.5 213.5V175.2l142.7 81.2-142.7 81.2z">
-                                        </path>
-                                    </svg></a>
-                            </div>
-                            <div class="col-md-2 col-sm-4">
-
-                                <a href=" "><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                                        <path fill="#ff80c0"
-                                            d="M194.4 211.7a53.3 53.3 0 1 0 59.3 88.7 53.3 53.3 0 1 0 -59.3-88.7zm142.3-68.4c-5.2-5.2-11.5-9.3-18.4-12c-18.1-7.1-57.6-6.8-83.1-6.5c-4.1 0-7.9 .1-11.2 .1c-3.3 0-7.2 0-11.4-.1c-25.5-.3-64.8-.7-82.9 6.5c-6.9 2.7-13.1 6.8-18.4 12s-9.3 11.5-12 18.4c-7.1 18.1-6.7 57.7-6.5 83.2c0 4.1 .1 7.9 .1 11.1s0 7-.1 11.1c-.2 25.5-.6 65.1 6.5 83.2c2.7 6.9 6.8 13.1 12 18.4s11.5 9.3 18.4 12c18.1 7.1 57.6 6.8 83.1 6.5c4.1 0 7.9-.1 11.2-.1c3.3 0 7.2 0 11.4 .1c25.5 .3 64.8 .7 82.9-6.5c6.9-2.7 13.1-6.8 18.4-12s9.3-11.5 12-18.4c7.2-18 6.8-57.4 6.5-83c0-4.2-.1-8.1-.1-11.4s0-7.1 .1-11.4c.3-25.5 .7-64.9-6.5-83l0 0c-2.7-6.9-6.8-13.1-12-18.4zm-67.1 44.5A82 82 0 1 1 178.4 324.2a82 82 0 1 1 91.1-136.4zm29.2-1.3c-3.1-2.1-5.6-5.1-7.1-8.6s-1.8-7.3-1.1-11.1s2.6-7.1 5.2-9.8s6.1-4.5 9.8-5.2s7.6-.4 11.1 1.1s6.5 3.9 8.6 7s3.2 6.8 3.2 10.6c0 2.5-.5 5-1.4 7.3s-2.4 4.4-4.1 6.2s-3.9 3.2-6.2 4.2s-4.8 1.5-7.3 1.5l0 0c-3.8 0-7.5-1.1-10.6-3.2zM448 96c0-35.3-28.7-64-64-64H64C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96zM357 389c-18.7 18.7-41.4 24.6-67 25.9c-26.4 1.5-105.6 1.5-132 0c-25.6-1.3-48.3-7.2-67-25.9s-24.6-41.4-25.8-67c-1.5-26.4-1.5-105.6 0-132c1.3-25.6 7.1-48.3 25.8-67s41.5-24.6 67-25.8c26.4-1.5 105.6-1.5 132 0c25.6 1.3 48.3 7.1 67 25.8s24.6 41.4 25.8 67c1.5 26.3 1.5 105.4 0 131.9c-1.3 25.6-7.1 48.3-25.8 67z">
-                                        </path>
-                                    </svg></a>
-
-                            </div>
-                            <div class="col-md-2 col-sm-4">
-                                <a href=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                        <path fill="#0080ff"
-                                            d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5V334.2H141.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287V510.1C413.8 494.8 512 386.9 512 256h0z">
-                                        </path>
-                                    </svg></a>
-
-                            </div>
-
-                            <div class="col-md-2 col-sm-4">
-
-
-                                <a href=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                        <path fill="#000000"
-                                            d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z">
-                                        </path>
-                                    </svg></a>
-                            </div>
+                            <p>
+                                Get guidance from experienced
+                                technology professionals.
+                            </p>
 
                         </div>
 
                     </div>
+
+
+                    <div class="side-item">
+
+                        <div class="side-icon">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+
+                        <div>
+
+                            <h4>
+                                Trusted Solutions
+                            </h4>
+
+                            <p>
+                                Reliable products and solutions
+                                from leading technology brands.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="side-item">
+
+                        <div class="side-icon">
+                            <i class="fa-solid fa-handshake"></i>
+                        </div>
+
+                        <div>
+
+                            <h4>
+                                End-to-End Support
+                            </h4>
+
+                            <p>
+                                From consultation to installation
+                                and after-sales support.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="social-title">
+                        Follow Freedom Technologies
+                    </div>
+
+
+                    <div class="socials">
+
+                        <a href="#">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+
+                        <a href="#">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+
+                        <a href="#">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+
+                        <a href="#">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+
+                    </div>
+
                 </div>
 
             </div>
+
+
+
+            <!-- RIGHT FORM -->
+
+            <div class="contact-form-box">
+
+                <div class="form-header">
+
+                    <h2>
+                        Send Us Your Requirement
+                    </h2>
+
+                    <p>
+                        Fill in the details below and we'll get back to you.
+                    </p>
+
+                </div>
+
+
+                <form id="contactForm">
+
+                    <div class="form-grid">
+
+
+                        <div class="input-group">
+
+                            <label>
+                                Your Name *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="name"
+                                placeholder="Enter your name"
+                                required>
+
+                        </div>
+
+
+
+                        <div class="input-group">
+
+                            <label>
+                                Email Address *
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="Enter your email"
+                                required>
+
+                        </div>
+
+
+
+                        <div class="input-group">
+
+                            <label>
+                                Phone Number *
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                placeholder="Enter your phone number"
+                                required>
+
+                        </div>
+
+
+
+                        <div class="input-group">
+
+                            <label>
+                                Company Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="company"
+                                placeholder="Enter company name">
+
+                        </div>
+
+
+
+                        <div class="input-group full">
+
+                            <label>
+                                Requirement
+                            </label>
+
+                            <select id="requirement">
+
+                                <option value="">
+                                    Select your requirement
+                                </option>
+
+                                <option>
+                                    Computing & Endpoint Solutions
+                                </option>
+
+                                <option>
+                                    CCTV & Security Solutions
+                                </option>
+
+                                <option>
+                                    Networking Solutions
+                                </option>
+
+                                <option>
+                                    Displays & Interactive Solutions
+                                </option>
+
+                                <option>
+                                    Conference Room Solutions
+                                </option>
+
+                                <option>
+                                    Cloud & Software Solutions
+                                </option>
+
+                                <option>
+                                    Infrastructure Projects
+                                </option>
+
+                                <option>
+                                    AMC & FMS
+                                </option>
+
+                                <option>
+                                    Other
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <div class="input-group full">
+
+                            <label>
+                                Message *
+                            </label>
+
+                            <textarea
+                                id="message"
+                                placeholder="Tell us about your requirement..."
+                                required></textarea>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="submit-btn">
+
+                        <i class="fa-brands fa-whatsapp"></i>
+
+                        Send Requirement on WhatsApp
+
+                    </button>
+
+
+                    <div
+                        class="success-message"
+                        id="successMessage">
+
+                        <i class="fa-solid fa-circle-check"></i>
+                        Your WhatsApp message is being prepared...
+
+                    </div>
+
+                </form>
+
+            </div>
+
         </div>
+
     </div>
-    <!-- Footer End -->
+
+</section>
 
 
-    <!-- Copyright Start -->
-    <div class="container-fluid copyright py-4">
+
+<!-- =====================================================
+     WHY CHOOSE US
+===================================================== -->
+
+<section class="why-section">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <div class="label">
+                WHY FREEDOM TECHNOLOGIES
+            </div>
+
+            <h2>
+                More Than Just A <span>Supplier</span>
+            </h2>
+
+            <p>
+                We focus on understanding your business before recommending
+                technology.
+            </p>
+
+        </div>
+
+
+        <div class="why-grid">
+
+
+            <div class="why-card">
+
+                <div class="why-number">
+                    01
+                </div>
+
+                <h3>
+                    Right Advice
+                </h3>
+
+                <p>
+                    We understand your requirements and recommend
+                    technology that fits your business needs.
+                </p>
+
+            </div>
+
+
+
+            <div class="why-card">
+
+                <div class="why-number">
+                    02
+                </div>
+
+                <h3>
+                    Trusted Brands
+                </h3>
+
+                <p>
+                    We work with leading technology brands to provide
+                    quality and reliable products.
+                </p>
+
+            </div>
+
+
+
+            <div class="why-card">
+
+                <div class="why-number">
+                    03
+                </div>
+
+                <h3>
+                    End-to-End Support
+                </h3>
+
+                <p>
+                    From consultation and supply to installation,
+                    implementation and support.
+                </p>
+
+            </div>
+
+
+
+            <div class="why-card">
+
+                <div class="why-number">
+                    04
+                </div>
+
+                <h3>
+                    Best Value
+                </h3>
+
+                <p>
+                    We help businesses achieve the right balance
+                    between technology, performance and investment.
+                </p>
+
+            </div>
+
+
+
+            <div class="why-card">
+
+                <div class="why-number">
+                    05
+                </div>
+
+                <h3>
+                    Fast Response
+                </h3>
+
+                <p>
+                    Get quick assistance for product enquiries,
+                    projects and technical requirements.
+                </p>
+
+            </div>
+
+
+
+            <div class="why-card">
+
+                <div class="why-number">
+                    06
+                </div>
+
+                <h3>
+                    Long-Term Partnership
+                </h3>
+
+                <p>
+                    Our goal is to build lasting relationships and
+                    support your technology journey.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     GOOGLE MAP
+===================================================== -->
+
+<section class="map-section">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <div class="label">
+                FIND US
+            </div>
+
+            <h2>
+                Our <span>Location</span>
+            </h2>
+
+        </div>
+
+
+        <div class="map-wrapper">
+
+            <iframe
+                src="https://www.google.com/maps?q=Rathinamangalam,Chennai,Tamil Nadu&output=embed"
+                loading="lazy"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CTA
+===================================================== -->
+
+<section class="cta">
+
+    <div class="container">
+
+        <div class="cta-box">
+
+            <div class="cta-content">
+
+                <small>
+                    READY TO GET STARTED?
+                </small>
+
+                <h2>
+                    Let's Build The Right
+                    Solution For Your Business.
+                </h2>
+
+                <p>
+                    Tell us what you need. Our technology experts
+                    are ready to help.
+                </p>
+
+            </div>
+
+
+            <a
+                href="https://wa.me/919840160229"
+                target="_blank"
+                class="cta-btn">
+
+                <i class="fa-brands fa-whatsapp"></i>
+                Start a Conversation
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+    <div class="container footer-grid">
+
+
+        <!-- ABOUT -->
+
+        <div class="footer-about">
+
+            <a href="./index.html" class="footer-logo">
+
+                <img
+                    src="img/logo.png"
+                    alt="Freedom Technologies">
+
+            </a>
+
+            <p>
+                Freedom Technologies is your trusted technology
+                partner for computing, networking, security,
+                displays, cloud and infrastructure solutions.
+            </p>
+
+
+            <div class="footer-social">
+
+                <a href="#">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- QUICK LINKS -->
+
+        <div class="footer-column">
+
+            <h3>
+                Quick Links
+            </h3>
+
+            <a href="./index.html">
+                Home
+            </a>
+
+            <a href="./product.html">
+                Products & Solution
+            </a>
+
+            <a href="./contact.html">
+                Contact
+            </a>
+
+        </div>
+
+
+
+        <!-- PRODUCTS -->
+
+        <div class="footer-column">
+
+            <h3>
+                Solutions
+            </h3>
+
+            <a href="./product.html">
+                Computing
+            </a>
+
+            <a href="./product.html">
+                CCTV & Security
+            </a>
+
+            <a href="./product.html">
+                Networking
+            </a>
+
+            <a href="./product.html">
+                Displays
+            </a>
+
+            <a href="./product.html">
+                Cloud & Software
+            </a>
+
+            <a href="./product.html">
+                Infrastructure
+            </a>
+
+        </div>
+
+
+
+        <!-- CONTACT -->
+
+        <div class="footer-column footer-contact">
+
+            <h3>
+                Contact Us
+            </h3>
+
+            <p>
+                <i class="fa-solid fa-location-dot"></i>
+                NO 1, Maharaja Nagar,
+                Rathinamangalam,
+                Chennai - 600127
+            </p>
+
+            <p>
+
+                <i class="fa-solid fa-phone"></i>
+
+                <a href="tel:+919840160229">
+                    +91 98401 60229
+                </a>
+
+            </p>
+
+            <p>
+
+                <i class="fa-solid fa-envelope"></i>
+
+                <a href="mailto:welcome@freedomtechnologies.in">
+                    welcome@freedomtechnologies.in
+                </a>
+
+            </p>
+
+            <p>
+
+                <i class="fa-solid fa-globe"></i>
+
+                freedomtechnologies.in
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+
         <div class="container">
-            <div class="row g-4 align-items-center">
-                <div class="col-md-6 text-center text-md-start mb-md-0">
-                    <span class="text-white"><a href="https://freedomtechnologies.in/"
-                            class="border-bottom text-white"><i class="fas fa-copyright text-light me-2"></i>Freedom
-                            Technologies/</a>, All right
-                        reserved.</span>
-                </div>
-                <div class="col-md-6 text-center text-md-end text-white">
 
+            © <span id="year"></span>
+            Freedom Technologies.
+            All Rights Reserved.
 
-                    Designed By <a class="border-bottom text-white" href="">freedom Technologies</a>.
-                </div>
-                <!-- <div class="visitor-counter me-3">
-                    👁 <span id="visitorCount"> </span>
-                </div> -->
-            </div>
         </div>
+
     </div>
-    <!-- Copyright End -->
 
-
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>
-
-
-    <!-- JavaScript Libraries -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+</footer>
 
 
 
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-app.js";
-        import {
-            getDatabase,
-            ref,
-            runTransaction,
-            onValue
-        } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-database.js";
+<!-- =====================================================
+     BACK TO TOP
+===================================================== -->
 
-        const firebaseConfig = {
-            apiKey: "AIzaSyAlPkoJuaS49jg3fttbYD3xIBBbiY5FH_o",
-            authDomain: "ft-visitor-counter.firebaseapp.com",
-            databaseURL: "https://ft-visitor-counter-default-rtdb.asia-southeast1.firebasedatabase.app",
-            projectId: "ft-visitor-counter",
-            storageBucket: "ft-visitor-counter.firebasestorage.app",
-            messagingSenderId: "872290284978",
-            appId: "1:872290284978:web:ba48784f2be91425cde0ab"
-        };
+<button
+    class="back-top"
+    id="backTop">
 
-        const app = initializeApp(firebaseConfig);
-        const db = getDatabase(app);
+    <i class="fa-solid fa-arrow-up"></i>
 
-        const counterRef = ref(db, "visitors");
+</button>
 
-        // Count once per browser
-        if (!localStorage.getItem("ftvisitor")) {
-            runTransaction(counterRef, (current) => (current || 0) + 1);
-            localStorage.setItem("ftvisitor", "true");
-        }
 
-        // Display count
-        onValue(counterRef, (snapshot) => {
-            document.getElementById("visitorCount").textContent =
-                snapshot.val() || 0;
-        });
-    </script>
 
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
-    <script>
-        document.getElementById("contactForm").addEventListener("submit", function(e){
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
 
-    e.preventDefault();
+<script>
 
-    // Change this number
-    const whatsappNumber = "919840160229";
 
-    let name = document.getElementById("name").value;
-    let email = document.getElementById("email").value;
-    let phone = document.getElementById("phone").value;
-    let subject = document.getElementById("subject").value;
-    let message = document.getElementById("message").value;
+/* =====================================================
+   MOBILE MENU
+===================================================== */
 
-    let whatsappMessage =
-`*New Contact Form Submission*
+const menuBtn = document.getElementById("menuBtn");
+
+const navbar = document.getElementById("navbar");
+
+
+menuBtn.addEventListener("click", function () {
+
+    navbar.classList.toggle("active");
+
+});
+
+
+/* Close menu after clicking */
+
+document.querySelectorAll(".navbar a").forEach(link => {
+
+    link.addEventListener("click", function () {
+
+        navbar.classList.remove("active");
+
+    });
+
+});
+
+
+
+/* =====================================================
+   YEAR
+===================================================== */
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+
+
+/* =====================================================
+   BACK TO TOP
+===================================================== */
+
+const backTop = document.getElementById("backTop");
+
+
+window.addEventListener("scroll", function () {
+
+    if (window.scrollY > 400) {
+
+        backTop.classList.add("show");
+
+    } else {
+
+        backTop.classList.remove("show");
+
+    }
+
+});
+
+
+backTop.addEventListener("click", function () {
+
+    window.scrollTo({
+
+        top: 0,
+
+        behavior: "smooth"
+
+    });
+
+});
+
+
+
+/* =====================================================
+   CONTACT FORM → WHATSAPP
+===================================================== */
+
+document
+    .getElementById("contactForm")
+    .addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+
+        const name =
+            document.getElementById("name").value.trim();
+
+        const email =
+            document.getElementById("email").value.trim();
+
+        const phone =
+            document.getElementById("phone").value.trim();
+
+        const company =
+            document.getElementById("company").value.trim();
+
+        const requirement =
+            document.getElementById("requirement").value;
+
+        const message =
+            document.getElementById("message").value.trim();
+
+
+        const whatsappNumber =
+            "919840160229";
+
+
+        const whatsappMessage =
+
+`*New Requirement - Freedom Technologies*
 
 *Name:* ${name}
+
 *Email:* ${email}
+
 *Phone:* ${phone}
-*Subject:* ${subject}
+
+*Company:* ${company || "Not Provided"}
+
+*Requirement:* ${requirement || "Not Selected"}
 
 *Message:*
-${message}`;
+${message}
 
-    let url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+Thank you.`;
 
-    window.open(url, "_blank");
+
+        const whatsappURL =
+            "https://wa.me/" +
+            whatsappNumber +
+            "?text=" +
+            encodeURIComponent(whatsappMessage);
+
+
+        document
+            .getElementById("successMessage")
+            .style.display = "block";
+
+
+        setTimeout(function () {
+
+            window.open(
+                whatsappURL,
+                "_blank"
+            );
+
+        }, 500);
+
+
+    });
+
+
+
+/* =====================================================
+   SIMPLE SCROLL REVEAL
+===================================================== */
+
+const cards =
+    document.querySelectorAll(
+        ".info-card, .why-card, .contact-form-box, .contact-sidebar"
+    );
+
+
+const observer =
+    new IntersectionObserver(
+
+        entries => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.style.opacity = "1";
+
+                    entry.target.style.transform =
+                        "translateY(0)";
+
+                }
+
+            });
+
+        },
+
+        {
+            threshold: 0.1
+        }
+
+    );
+
+
+cards.forEach(card => {
+
+    card.style.opacity = "0";
+
+    card.style.transform =
+        "translateY(30px)";
+
+    card.style.transition =
+        "opacity .7s ease, transform .7s ease";
+
+    observer.observe(card);
+
 });
-    </script>
-</body>
 
+</script>
+
+
+
+<!-- =====================================================
+     FIREBASE VISITOR COUNTER
+===================================================== -->
+
+<script type="module">
+
+    import {
+        initializeApp
+    }
+    from "https://www.gstatic.com/firebasejs/12.16.0/firebase-app.js";
+
+
+    import {
+        getDatabase,
+        ref,
+        runTransaction,
+        onValue
+    }
+    from "https://www.gstatic.com/firebasejs/12.16.0/firebase-database.js";
+
+
+    const firebaseConfig = {
+
+        apiKey:
+            "AIzaSyAlPkoJuaS49jg3fttbYD3xIBBbiY5FH_o",
+
+        authDomain:
+            "ft-visitor-counter.firebaseapp.com",
+
+        databaseURL:
+            "https://ft-visitor-counter-default-rtdb.asia-southeast1.firebasedatabase.app",
+
+        projectId:
+            "ft-visitor-counter",
+
+        storageBucket:
+            "ft-visitor-counter.firebasestorage.app",
+
+        messagingSenderId:
+            "872290284978",
+
+        appId:
+            "1:872290284978:web:ba48784f2be91425cde0ab"
+
+    };
+
+
+    const app =
+        initializeApp(firebaseConfig);
+
+
+    const db =
+        getDatabase(app);
+
+
+    const counterRef =
+        ref(db, "visitors");
+
+
+    /* Count only once per browser */
+
+    if (!localStorage.getItem("ftvisitor")) {
+
+        runTransaction(
+            counterRef,
+            current => (current || 0) + 1
+        );
+
+        localStorage.setItem(
+            "ftvisitor",
+            "true"
+        );
+
+    }
+
+
+    /* Display visitor count */
+
+    onValue(
+        counterRef,
+        snapshot => {
+
+            document.getElementById(
+                "visitorCount"
+            ).textContent =
+                snapshot.val() || 0;
+
+        }
+    );
+
+</script>
+
+
+</body>
 </html>

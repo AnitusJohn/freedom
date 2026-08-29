@@ -1104,3 +1104,15 @@ button {
         width: 100%;
     }
 }
+
+.phone {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #08783d;
+    color: white;
+    padding: 10px 17px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: 0.3s;
+}
